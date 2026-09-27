@@ -1,0 +1,40 @@
+import type { ForecastPoint } from '../types';
+
+export const forecastData: ForecastPoint[] = [
+  { hour: 0, timeLabel: '00:00', predictedAqi: 84.8, level: 'Good' },
+  { hour: 1, timeLabel: '01:00', predictedAqi: 83.1, level: 'Good' },
+  { hour: 2, timeLabel: '02:00', predictedAqi: 87.6, level: 'Good' },
+  { hour: 3, timeLabel: '03:00', predictedAqi: 85.3, level: 'Good' },
+  { hour: 4, timeLabel: '04:00', predictedAqi: 99.8, level: 'Good' },
+  { hour: 5, timeLabel: '05:00', predictedAqi: 93.0, level: 'Good' },
+  { hour: 6, timeLabel: '06:00', predictedAqi: 104.1, level: 'Moderate' },
+  { hour: 7, timeLabel: '07:00', predictedAqi: 100.5, level: 'Moderate' },
+  { hour: 8, timeLabel: '08:00', predictedAqi: 75.4, level: 'Good' },
+  { hour: 9, timeLabel: '09:00', predictedAqi: 88.5, level: 'Good' },
+  { hour: 10, timeLabel: '10:00', predictedAqi: 84.7, level: 'Good' },
+  { hour: 11, timeLabel: '11:00', predictedAqi: 87.6, level: 'Good' },
+  { hour: 12, timeLabel: '12:00', predictedAqi: 86.4, level: 'Good' },
+  { hour: 13, timeLabel: '13:00', predictedAqi: 97.2, level: 'Good' },
+  { hour: 14, timeLabel: '14:00', predictedAqi: 97.2, level: 'Good' },
+  { hour: 15, timeLabel: '15:00', predictedAqi: 111.4, level: 'Moderate' },
+  { hour: 16, timeLabel: '16:00', predictedAqi: 124.0, level: 'Moderate' },
+  { hour: 17, timeLabel: '17:00', predictedAqi: 131.5, level: 'Poor' },
+  { hour: 18, timeLabel: '18:00', predictedAqi: 132.2, level: 'Poor' },
+  { hour: 19, timeLabel: '19:00', predictedAqi: 144.4, level: 'Poor' },
+  { hour: 20, timeLabel: '20:00', predictedAqi: 174.1, level: 'Poor' },
+  { hour: 21, timeLabel: '21:00', predictedAqi: 169.8, level: 'Poor' },
+  { hour: 22, timeLabel: '22:00', predictedAqi: 169.0, level: 'Poor' },
+  { hour: 23, timeLabel: '23:00', predictedAqi: 169.2, level: 'Poor' },
+];
+
+export const forecastMeta = {
+  forecastDate: '2026-09-01',
+  dayOfWeek: 'Tuesday',
+  priorDayLastTimestamp: '2026-08-31 23:00',
+  minPredictedAqi: 75.4,
+  minHour: '08:00',
+  maxPredictedAqi: 174.1,
+  maxHour: '20:00',
+  averagePredictedAqi: 115.3,
+  trendDescription: 'Stable moderate air quality through the morning and early afternoon, followed by a noticeable evening accumulation beginning at 16:00 and peaking at 20:00.',
+};

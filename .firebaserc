@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "aiot-air-quality-ml"
+  },
+  "targets": {
+    "aiot-air-quality-ml": {
+      "hosting": {
+        "app": [
+          "aiot-air-quality-ml"
+        ]
+      }
+    }
+  }
+}
