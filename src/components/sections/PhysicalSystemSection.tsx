@@ -141,7 +141,7 @@ export const PhysicalSystemSection: React.FC<PhysicalSystemSectionProps> = ({
                 {/* The Real Hardware Photograph */}
                 <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden bg-[#EAE6DE]">
                   <img
-                    src="/images/hardware/air-quality-monitoring-system.jpg"
+                    src="/images/hardware/air-quality-monitoring-system.webp"
                     alt="Physical prototype of the AIoT air quality monitoring system"
                     className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.018]"
                     loading="lazy"
@@ -278,7 +278,7 @@ export const PhysicalSystemSection: React.FC<PhysicalSystemSectionProps> = ({
             {/* Modal Image Body */}
             <div className="relative overflow-auto max-h-[calc(92vh-100px)] p-2 sm:p-4 bg-[#19221C]/5 flex items-center justify-center">
               <img
-                src="/images/hardware/air-quality-monitoring-system.jpg"
+                src="/images/hardware/air-quality-monitoring-system.webp"
                 alt="Physical prototype of the AIoT air quality monitoring system full resolution"
                 className="max-w-full max-h-[78vh] object-contain rounded-xl shadow-xs"
               />

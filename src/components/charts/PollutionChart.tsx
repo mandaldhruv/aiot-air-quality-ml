@@ -74,9 +74,10 @@ export const PollutionChart: React.FC<PollutionChartProps> = ({ onViewCode }) =>
                 <span className="font-mono text-[10px]">df['Pollution Level'].value_counts()</span>
               </div>
               <img
-                src="/graph-images/pollution_level_distribution.png"
+                src="/graph-images/pollution_level_distribution.webp"
                 alt="Original Pollution Level Distribution plot output from Google Colab"
                 className="w-full max-h-[300px] object-contain rounded-lg shadow-xs"
+                loading="lazy"
               />
             </div>
             <p className="text-[11px] text-[#738077] italic text-center">

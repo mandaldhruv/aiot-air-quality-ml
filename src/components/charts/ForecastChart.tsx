@@ -86,9 +86,10 @@ export const ForecastChart: React.FC<ForecastChartProps> = ({ onViewCode }) => {
                 <span className="font-mono text-[10px] sm:text-[11px] truncate">plt.plot(future_df['hour_label'], future_df['predicted_AQI'], color='purple')</span>
               </div>
               <img
-                src="/graph-images/predicted_aqi_next_24h.png"
+                src="/graph-images/predicted_aqi_next_24h.webp"
                 alt="Original Predicted AQI for Next 24 Hours plot output from Google Colab"
                 className="w-full max-h-[420px] object-contain rounded-lg shadow-xs"
+                loading="lazy"
               />
             </div>
             <p className="text-xs text-[#738077] italic text-center">

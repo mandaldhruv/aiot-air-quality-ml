@@ -75,9 +75,10 @@ export const DailyAqiChart: React.FC<DailyAqiChartProps> = ({ onViewCode }) => {
                 <span className="font-mono text-[11px] truncate">daily_avg = df.groupby('day_only')['AQI'].mean()</span>
               </div>
               <img
-                src="/graph-images/average_aqi_per_day.png"
+                src="/graph-images/average_aqi_per_day.webp"
                 alt="Original Average AQI per Day plot output from Google Colab"
                 className="w-full max-h-[420px] object-contain rounded-lg shadow-xs"
+                loading="lazy"
               />
             </div>
             <p className="text-xs text-[#738077] italic text-center">

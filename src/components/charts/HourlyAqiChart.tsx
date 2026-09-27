@@ -92,9 +92,10 @@ export const HourlyAqiChart: React.FC<HourlyAqiChartProps> = ({ onViewCode }) =>
                 <span className="font-mono text-[10px]">palette='viridis'</span>
               </div>
               <img
-                src="/graph-images/average_aqi_by_hour.png"
+                src="/graph-images/average_aqi_by_hour.webp"
                 alt="Original Average AQI by Hour of Day plot output from Google Colab"
                 className="w-full max-h-[300px] object-contain rounded-lg shadow-xs"
+                loading="lazy"
               />
             </div>
             <p className="text-[11px] text-[#738077] italic text-center">
