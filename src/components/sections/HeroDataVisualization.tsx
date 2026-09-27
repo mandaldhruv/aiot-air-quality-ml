@@ -120,8 +120,8 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
   return (
     <div className="w-full relative select-none">
       {/* Top Editorial Meta Bar */}
-      <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider text-[#738077] mb-2 px-1">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-1 text-[11px] font-semibold uppercase tracking-wider text-[#738077] mb-2 px-1">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-[#7E22CE]" />
           <span className="text-[#19221C] font-bold">Predicted AQI</span>
           <span className="text-[#D8D2C6]">—</span>
@@ -133,11 +133,11 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
       </div>
 
       {/* SVG Canvas (Breathes directly in whitespace, no heavy card) */}
-      <div className="relative w-full aspect-[520/260] max-h-[340px]">
+      <div className="relative w-full aspect-[520/260] max-h-[340px] overflow-hidden">
         <svg
           ref={svgRef}
           viewBox={`0 0 ${width} ${height}`}
-          className="w-full h-full overflow-visible"
+          className="w-full h-full overflow-hidden"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -370,7 +370,7 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
       </div>
 
       {/* Subtle Link to Full Analysis Section */}
-      <div className="mt-3 pt-2.5 border-t border-[#EDE8DF] flex items-center justify-between text-[11px] text-[#738077] px-1">
+      <div className="mt-3 pt-2.5 border-t border-[#EDE8DF] flex flex-wrap items-center justify-between gap-1.5 text-[11px] text-[#738077] px-1">
         <span>From the project's Random Forest forecast</span>
         {onExploreForecast && (
           <button

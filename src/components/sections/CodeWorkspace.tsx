@@ -61,10 +61,10 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
   });
 
   return (
-    <section id="section-code" className="py-16 md:py-20 border-t border-[#E6E1D8]">
+    <section id="section-code" className="py-12 sm:py-16 md:py-20 border-t border-[#E6E1D8] w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          number="09"
+          number="10"
           badge="Python & Colab Environment"
           title="Inside the ML Workflow"
           description="Explore the complete executable Python script partitioned into eleven logical cells. Each module documents a concrete phase of our analytical and modeling process, from package imports to final forecast rendering."
@@ -72,9 +72,9 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
         />
 
         {/* Toolbar & Filter Bar */}
-        <div className="bg-white rounded-2xl border border-[#E6E1D8] p-4 md:p-6 shadow-[0_2px_12px_rgba(30,40,35,0.03)] mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-white rounded-2xl border border-[#E6E1D8] p-3.5 sm:p-4 md:p-6 shadow-[0_2px_12px_rgba(30,40,35,0.03)] mb-6 sm:mb-8 flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
           {/* Search bar */}
-          <div className="relative flex-1 max-w-md">
+          <div className="relative flex-1 w-full md:max-w-md">
             <Search className="w-4 h-4 text-[#738077] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
@@ -86,18 +86,18 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
           </div>
 
           {/* Quick controls */}
-          <div className="flex items-center gap-2 self-end md:self-auto">
+          <div className="flex items-center gap-2 self-start md:self-auto">
             <button
               type="button"
               onClick={expandAll}
-              className="px-3 py-1.5 text-xs font-semibold text-[#19221C] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors"
+              className="px-3 py-1.5 text-xs font-semibold text-[#19221C] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors cursor-pointer"
             >
               Expand All
             </button>
             <button
               type="button"
               onClick={collapseAll}
-              className="px-3 py-1.5 text-xs font-semibold text-[#48544D] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors"
+              className="px-3 py-1.5 text-xs font-semibold text-[#48544D] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors cursor-pointer"
             >
               Collapse All
             </button>
@@ -105,7 +105,7 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
         </div>
 
         {/* Code Blocks Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-3.5 sm:space-y-4">
           {filteredSections.map((sec) => {
             const isExpanded = expandedSections[sec.id] || activeSectionId === sec.id;
             const isTargeted = activeSectionId === sec.id;
@@ -114,7 +114,7 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
               <div
                 key={sec.id}
                 id={`code-${sec.id}`}
-                className={`bg-white rounded-2xl border transition-all duration-300 shadow-[0_2px_8px_rgba(30,40,35,0.02)] ${
+                className={`bg-white rounded-2xl border transition-all duration-300 shadow-[0_2px_8px_rgba(30,40,35,0.02)] overflow-hidden ${
                   isTargeted
                     ? 'border-[#2F4D3E] ring-2 ring-[#2F4D3E]/20'
                     : 'border-[#E6E1D8] hover:border-[#D8D2C6]'
@@ -123,15 +123,15 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
                 {/* Cell Header */}
                 <div
                   onClick={() => toggleSection(sec.id)}
-                  className="p-5 md:p-6 cursor-pointer flex items-center justify-between gap-4 select-none"
+                  className="p-3.5 sm:p-5 md:p-6 cursor-pointer flex items-center justify-between gap-3 select-none"
                 >
-                  <div className="flex items-center gap-3.5">
-                    <span className="font-mono text-xs font-bold text-[#5F7F6C] bg-[#EBF1ED] px-2 py-1 rounded-md border border-[#D6E3DB]">
+                  <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+                    <span className="font-mono text-[10px] sm:text-xs font-bold text-[#5F7F6C] bg-[#EBF1ED] px-2 py-0.5 sm:py-1 rounded-md border border-[#D6E3DB] shrink-0">
                       CELL {sec.sectionNumber}
                     </span>
 
-                    <div>
-                      <h3 className="text-base md:text-lg font-bold text-[#19221C]">
+                    <div className="min-w-0">
+                      <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#19221C] truncate">
                         {sec.title}
                       </h3>
                       <p className="text-xs text-[#738077] mt-0.5 line-clamp-1">
@@ -140,18 +140,18 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                     {sec.associatedGraphId && (
                       <span className="hidden sm:inline-flex text-[10px] font-semibold text-[#366B6B] bg-[#E3EFEF] px-2 py-0.5 rounded-full border border-[#C8DFDF]">
                         Linked to Graph
                       </span>
                     )}
 
-                    <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[#EDE8DF] flex items-center justify-center text-[#738077]">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#FAF8F5] border border-[#EDE8DF] flex items-center justify-center text-[#738077]">
                       {isExpanded ? (
-                        <ChevronUp className="w-4 h-4" />
+                        <ChevronUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       ) : (
-                        <ChevronDown className="w-4 h-4" />
+                        <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       )}
                     </div>
                   </div>
@@ -159,23 +159,25 @@ export const CodeWorkspace: React.FC<CodeWorkspaceProps> = ({ activeSectionId })
 
                 {/* Collapsible Content */}
                 {isExpanded && (
-                  <div className="px-5 pb-6 md:px-6 md:pb-6 pt-0 border-t border-[#F0ECE3]">
-                    <div className="pt-4 space-y-4">
+                  <div className="px-3.5 pb-4 sm:px-5 sm:pb-6 md:px-6 md:pb-6 pt-0 border-t border-[#F0ECE3] w-full min-w-0 max-w-full">
+                    <div className="pt-3 sm:pt-4 space-y-3 sm:space-y-4">
                       <p className="text-xs sm:text-sm text-[#48544D] leading-relaxed">
                         {sec.summary}
                       </p>
 
                       {/* Code Viewer */}
-                      <CodeBlock
-                        code={sec.code}
-                        language="python"
-                        title={`Python Cell ${sec.sectionNumber} • ${sec.title}`}
-                        showLineNumbers={true}
-                      />
+                      <div className="w-full min-w-0 max-w-full overflow-hidden">
+                        <CodeBlock
+                          code={sec.code}
+                          language="python"
+                          title={`Python Cell ${sec.sectionNumber} • ${sec.title}`}
+                          showLineNumbers={true}
+                        />
+                      </div>
 
                       {/* Key Outputs List */}
                       {sec.keyOutputs && sec.keyOutputs.length > 0 && (
-                        <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#EDE8DF]">
+                        <div className="bg-[#FAF8F5] p-3 sm:p-3.5 rounded-xl border border-[#EDE8DF]">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-[#738077] block mb-2">
                             Key Execution Assertions & Outputs
                           </span>

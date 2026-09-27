@@ -35,21 +35,21 @@ export const InsightsSection: React.FC = () => {
   };
 
   return (
-    <section id="section-insights" className="py-16 md:py-20 border-t border-[#E6E1D8]">
+    <section id="section-insights" className="py-12 sm:py-16 md:py-20 border-t border-[#E6E1D8] w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          number="10"
+          number="11"
           badge="Empirical Findings"
           title="What the Data Shows"
           description="Strictly descriptive findings derived directly from our 1,967 logged records and verified Colab visualizations. We document observed environmental patterns without unverified causal speculation."
           badgeColor="sage"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {insightsData.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-[#E6E1D8] p-6 md:p-8 shadow-[0_2px_8px_rgba(30,40,35,0.02)] flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-[#E6E1D8] p-4 sm:p-6 md:p-8 shadow-[0_2px_8px_rgba(30,40,35,0.02)] flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -65,7 +65,7 @@ export const InsightsSection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-[#19221C] mb-2">
+                <h3 className="text-base sm:text-lg font-bold text-[#19221C] mb-2">
                   {item.title}
                 </h3>
 
@@ -74,7 +74,7 @@ export const InsightsSection: React.FC = () => {
                 </p>
 
                 {/* Ground Truth Data Evidence */}
-                <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#EDE8DF] mb-4">
+                <div className="bg-[#FAF8F5] p-3 sm:p-3.5 rounded-xl border border-[#EDE8DF] mb-4">
                   <div className="text-[10px] font-bold uppercase tracking-wider text-[#738077] mb-1">
                     Supporting Data Evidence
                   </div>

@@ -22,15 +22,15 @@ export const DailyAqiChart: React.FC<DailyAqiChartProps> = ({ onViewCode }) => {
   return (
     <div className="bg-white rounded-2xl border border-[#E6E1D8] shadow-[0_2px_12px_rgba(30,40,35,0.03)] overflow-hidden transition-all duration-300">
       {/* Card Header */}
-      <div className="p-6 md:p-8 border-b border-[#F0ECE3] flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="p-4 sm:p-6 md:p-8 border-b border-[#F0ECE3] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 mb-1.5">
+          <div className="flex flex-wrap items-center gap-2 mb-1.5">
             <span className="text-[11px] font-semibold uppercase tracking-wider text-[#5F7F6C] bg-[#EBF1ED] px-2.5 py-0.5 rounded-full">
               Historical Analysis • 20 Days
             </span>
             <span className="text-[11px] font-medium text-[#738077]">2026-08-12 to 2026-08-31</span>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-[#19221C] tracking-tight">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#19221C] tracking-tight">
             Average AQI per Day
           </h3>
           <p className="text-xs md:text-sm text-[#48544D] mt-1 max-w-2xl">
@@ -43,7 +43,7 @@ export const DailyAqiChart: React.FC<DailyAqiChartProps> = ({ onViewCode }) => {
           <button
             type="button"
             onClick={() => setShowOriginal(!showOriginal)}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors border ${
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors border cursor-pointer ${
               showOriginal
                 ? 'bg-[#2F4D3E] text-white border-[#2F4D3E]'
                 : 'bg-[#FAF8F5] text-[#2F4D3E] border-[#D8D2C6] hover:bg-[#EBF1ED]'
@@ -57,7 +57,7 @@ export const DailyAqiChart: React.FC<DailyAqiChartProps> = ({ onViewCode }) => {
           <button
             type="button"
             onClick={() => onViewCode && onViewCode('sec-04')}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#19221C] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#19221C] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors cursor-pointer"
           >
             <Code2 className="w-3.5 h-3.5 text-[#5F7F6C]" />
             View Analysis Code
@@ -66,13 +66,13 @@ export const DailyAqiChart: React.FC<DailyAqiChartProps> = ({ onViewCode }) => {
       </div>
 
       {/* Main Content Area */}
-      <div className="p-6 md:p-8">
+      <div className="p-4 sm:p-6 md:p-8">
         {showOriginal ? (
           <div className="space-y-4">
-            <div className="bg-[#FAF8F5] rounded-xl p-4 border border-[#E6E1D8] flex flex-col items-center">
-              <div className="w-full flex items-center justify-between text-xs text-[#738077] mb-3">
+            <div className="bg-[#FAF8F5] rounded-xl p-3 sm:p-4 border border-[#E6E1D8] flex flex-col items-center">
+              <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#738077] mb-3 gap-1">
                 <span className="font-semibold text-[#19221C]">Matplotlib Output from Google Colab</span>
-                <span>daily_avg = df.groupby('day_only')['AQI'].mean()</span>
+                <span className="font-mono text-[11px] truncate">daily_avg = df.groupby('day_only')['AQI'].mean()</span>
               </div>
               <img
                 src="/graph-images/average_aqi_per_day.png"
@@ -81,28 +81,29 @@ export const DailyAqiChart: React.FC<DailyAqiChartProps> = ({ onViewCode }) => {
               />
             </div>
             <p className="text-xs text-[#738077] italic text-center">
-              Exact plot output generated using <code className="font-mono text-[#2F4D3E]">plt.plot(daily_avg['day_only'], daily_avg['AQI'], marker='o', color='crimson')</code>
+              Exact plot output generated using <code className="font-mono text-[#2F4D3E] break-all">plt.plot(daily_avg['day_only'], daily_avg['AQI'], marker='o', color='crimson')</code>
             </p>
           </div>
         ) : (
           <div className="space-y-6">
-            <div className="h-[360px] md:h-[400px] w-full">
+            <div className="h-[280px] sm:h-[340px] md:h-[400px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                   data={dailyAqiData}
-                  margin={{ top: 15, right: 25, left: -10, bottom: 25 }}
+                  margin={{ top: 15, right: 15, left: -15, bottom: 25 }}
                 >
                   <CartesianGrid strokeDasharray="3 3" stroke="#EDE8DF" vertical={false} />
                   <XAxis
                     dataKey="formattedDate"
-                    tick={{ fill: '#738077', fontSize: 11, fontFamily: 'Manrope' }}
+                    tick={{ fill: '#738077', fontSize: 10, fontFamily: 'Manrope' }}
                     tickLine={false}
                     axisLine={{ stroke: '#D8D2C6' }}
                     dy={8}
+                    interval="preserveStartEnd"
                   />
                   <YAxis
                     domain={[80, 240]}
-                    tick={{ fill: '#738077', fontSize: 11, fontFamily: 'Manrope' }}
+                    tick={{ fill: '#738077', fontSize: 10, fontFamily: 'Manrope' }}
                     tickLine={false}
                     axisLine={{ stroke: '#D8D2C6' }}
                     dx={-4}

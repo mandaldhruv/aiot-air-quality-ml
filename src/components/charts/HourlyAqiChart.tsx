@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ResponsiveContainer,
   BarChart,
@@ -30,11 +30,18 @@ const getBarColor = (index: number) => {
 
 export const HourlyAqiChart: React.FC<HourlyAqiChartProps> = ({ onViewCode }) => {
   const [showOriginal, setShowOriginal] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 640 : false));
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E6E1D8] shadow-[0_2px_12px_rgba(30,40,35,0.03)] overflow-hidden transition-all duration-300 h-full flex flex-col justify-between">
+    <div className="bg-white rounded-2xl border border-[#E6E1D8] shadow-[0_2px_12px_rgba(30,40,35,0.03)] overflow-hidden transition-all duration-300 h-full flex flex-col justify-between w-full min-w-0">
       {/* Header */}
-      <div className="p-6 border-b border-[#F0ECE3] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="p-4 sm:p-6 border-b border-[#F0ECE3] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-[11px] font-semibold uppercase tracking-wider text-[#366B6B] bg-[#E3EFEF] px-2.5 py-0.5 rounded-full">
@@ -49,11 +56,11 @@ export const HourlyAqiChart: React.FC<HourlyAqiChartProps> = ({ onViewCode }) =>
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap shrink-0">
           <button
             type="button"
             onClick={() => setShowOriginal(!showOriginal)}
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg transition-colors border ${
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg transition-colors border cursor-pointer ${
               showOriginal
                 ? 'bg-[#2F4D3E] text-white border-[#2F4D3E]'
                 : 'bg-[#FAF8F5] text-[#2F4D3E] border-[#D8D2C6] hover:bg-[#EBF1ED]'
@@ -67,7 +74,7 @@ export const HourlyAqiChart: React.FC<HourlyAqiChartProps> = ({ onViewCode }) =>
           <button
             type="button"
             onClick={() => onViewCode && onViewCode('sec-05')}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-[#19221C] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold text-[#19221C] bg-[#FAF8F5] hover:bg-[#EBF1ED] border border-[#D8D2C6] rounded-lg transition-colors cursor-pointer"
           >
             <Code2 className="w-3.5 h-3.5 text-[#5F7F6C]" />
             Code
@@ -76,13 +83,13 @@ export const HourlyAqiChart: React.FC<HourlyAqiChartProps> = ({ onViewCode }) =>
       </div>
 
       {/* Chart Body */}
-      <div className="p-6 flex-1 flex flex-col justify-between">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
         {showOriginal ? (
           <div className="space-y-3">
             <div className="bg-[#FAF8F5] rounded-xl p-3 border border-[#E6E1D8] flex flex-col items-center">
-              <div className="w-full flex items-center justify-between text-[11px] text-[#738077] mb-2">
+              <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-[#738077] mb-2 gap-1">
                 <span className="font-semibold text-[#19221C]">Seaborn Barplot Output</span>
-                <span>palette='viridis'</span>
+                <span className="font-mono text-[10px]">palette='viridis'</span>
               </div>
               <img
                 src="/graph-images/average_aqi_by_hour.png"
@@ -91,7 +98,7 @@ export const HourlyAqiChart: React.FC<HourlyAqiChartProps> = ({ onViewCode }) =>
               />
             </div>
             <p className="text-[11px] text-[#738077] italic text-center">
-              Generated using <code className="font-mono text-[#2F4D3E]">sns.barplot(data=hourly_avg, x='hour_label', y='AQI', palette='viridis')</code>
+              Generated using <code className="font-mono text-[#2F4D3E] break-all">sns.barplot(data=hourly_avg, x='hour_label', y='AQI', palette='viridis')</code>
             </p>
           </div>
         ) : (
@@ -108,7 +115,7 @@ export const HourlyAqiChart: React.FC<HourlyAqiChartProps> = ({ onViewCode }) =>
                     tick={{ fill: '#738077', fontSize: 10, fontFamily: 'Manrope' }}
                     tickLine={false}
                     axisLine={{ stroke: '#D8D2C6' }}
-                    interval={window.innerWidth < 640 ? 3 : 1}
+                    interval={isMobile ? 3 : 1}
                     angle={-45}
                     textAnchor="end"
                     height={35}

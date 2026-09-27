@@ -3,6 +3,7 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/sections/HeroSection';
 import { HardwareContext } from './components/sections/HardwareContext';
+import { PhysicalSystemSection } from './components/sections/PhysicalSystemSection';
 import { PipelineSection } from './components/sections/PipelineSection';
 import { FeaturesSection } from './components/sections/FeaturesSection';
 import { EdaSection } from './components/sections/EdaSection';
@@ -55,12 +56,12 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#19221C] flex flex-col font-sans selection:bg-[#D7E3DC] selection:text-[#182B21]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#FAF8F5] text-[#19221C] flex flex-col font-sans selection:bg-[#D7E3DC] selection:text-[#182B21]">
       {/* Sticky Editorial Header */}
       <Navbar onNavigate={scrollToSection} />
 
       {/* Main Content Area */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full min-w-0">
         {/* 01: Hero Section */}
         <HeroSection
           onExploreClick={() => scrollToSection('section-pipeline')}
@@ -70,7 +71,10 @@ export const App: React.FC = () => {
         {/* 02: Hardware System Context */}
         <HardwareContext />
 
-        {/* 03: ML Data Pipeline */}
+        {/* 03: The Physical System (Real Hardware Prototype Showcase) */}
+        <PhysicalSystemSection onExplorePipeline={() => scrollToSection('section-pipeline')} />
+
+        {/* 04: ML Data Pipeline */}
         <PipelineSection onViewCodeSection={handleViewCode} />
 
         {/* 04: Dataset & Feature Matrix */}

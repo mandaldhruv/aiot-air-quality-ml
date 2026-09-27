@@ -40,6 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   // Helper mapping: map internal sub-sections to their primary nav link
   const normalizeSectionId = (id: string): string => {
     if (id === 'section-eval') return 'section-model';
+    if (id === 'section-physical') return 'section-overview';
     return id;
   };
 
@@ -63,6 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       // Check section bounding rects relative to top reading threshold (~140px)
       const sections = [
         'section-overview',
+        'section-physical',
         'section-pipeline',
         'section-features',
         'section-eda',
@@ -183,19 +185,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         {/* Brand / Title */}
         <div
           onClick={() => handleLinkClick('section-hero')}
-          className="cursor-pointer group flex items-center gap-2.5 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F4D3E] rounded-lg"
+          className="cursor-pointer group flex items-center gap-2 sm:gap-2.5 min-w-0 max-w-[70%] sm:max-w-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F4D3E] rounded-lg"
           role="button"
           tabIndex={0}
           onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('section-hero')}
         >
-          <div className="w-8 h-8 rounded-lg bg-[#2F4D3E] flex items-center justify-center text-white shadow-xs group-hover:bg-[#1E362A] transition-colors">
+          <div className="w-8 h-8 rounded-lg bg-[#2F4D3E] flex items-center justify-center text-white shadow-xs group-hover:bg-[#1E362A] transition-colors shrink-0">
             <Activity className="w-4 h-4 text-[#D8E6DE]" />
           </div>
-          <div>
-            <div className="text-sm font-extrabold text-[#19221C] tracking-tight group-hover:text-[#2F4D3E] transition-colors leading-tight">
+          <div className="min-w-0">
+            <div className="text-xs sm:text-sm font-extrabold text-[#19221C] tracking-tight group-hover:text-[#2F4D3E] transition-colors leading-tight truncate">
               AIoT Air Quality Network
             </div>
-            <div className="text-[10px] font-semibold text-[#738077] uppercase tracking-wider hidden sm:block">
+            <div className="text-[10px] font-semibold text-[#738077] uppercase tracking-wider hidden sm:block truncate">
               ML & Environmental Data Workspace
             </div>
           </div>
@@ -246,11 +248,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         </nav>
 
         {/* Right CTA Button (Desktop) & Active Pill (Tablet/Mobile) */}
-        <div className="flex items-center gap-2 shrink-0">
-          {/* Tablet/Mobile Active Section Chip (< 1024px) */}
-          <div className="lg:hidden flex items-center gap-1.5 px-2.5 py-1 bg-[#EBF1ED] border border-[#D6E3DB] rounded-full text-[11px] font-semibold text-[#2F4D3E]">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          {/* Tablet Active Section Chip (640px to 1023px) */}
+          <div className="hidden sm:flex lg:hidden items-center gap-1.5 px-2.5 py-1 bg-[#EBF1ED] border border-[#D6E3DB] rounded-full text-[11px] font-semibold text-[#2F4D3E]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2F4D3E] animate-pulse" />
-            <span className="truncate max-w-[120px] sm:max-w-[160px]">
+            <span className="truncate max-w-[120px] md:max-w-[160px]">
               {activeItemObj.label}
             </span>
           </div>
@@ -269,7 +271,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           {/* Hamburger Menu Button (< 1024px) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-[#19221C] hover:bg-[#EBF1ED] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F4D3E]"
+            className="lg:hidden p-2 rounded-lg text-[#19221C] hover:bg-[#EBF1ED] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F4D3E] min-w-[40px] min-h-[40px] flex items-center justify-center"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={mobileMenuOpen}
           >

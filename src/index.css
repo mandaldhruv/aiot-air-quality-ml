@@ -33,20 +33,42 @@
   --color-coral-light: #FCECE9;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: var(--font-primary);
   background-color: var(--color-bg-ivory);
   color: var(--color-ink-primary);
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure images and media never exceed container boundaries */
+img,
+svg,
+canvas {
+  max-width: 100%;
+}
+
 /* Ensure sticky navbar never obscures section headings */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4.5rem;
 }
 
 @media (min-width: 768px) {

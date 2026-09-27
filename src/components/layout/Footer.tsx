@@ -7,16 +7,16 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onScrollTop }) => {
   return (
-    <footer className="bg-[#19221C] text-[#D8D2C6] border-t border-[#2A3830] pt-14 pb-12 mt-20">
+    <footer className="bg-[#19221C] text-[#D8D2C6] border-t border-[#2A3830] pt-10 sm:pt-14 pb-8 sm:pb-12 mt-12 sm:mt-20 w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-12 border-b border-[#2A3830]">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-10 sm:pb-12 border-b border-[#2A3830]">
           {/* Brand & Project Identity */}
-          <div className="max-w-md space-y-3">
+          <div className="max-w-md space-y-3 min-w-0">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[#2F4D3E] flex items-center justify-center text-white">
+              <div className="w-8 h-8 rounded-lg bg-[#2F4D3E] flex items-center justify-center text-white shrink-0">
                 <Activity className="w-4 h-4 text-[#D8E6DE]" />
               </div>
-              <span className="text-base font-extrabold text-white tracking-tight">
+              <span className="text-sm sm:text-base font-extrabold text-white tracking-tight truncate">
                 AIoT Air Quality Monitoring Network
               </span>
             </div>
@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTop }) => {
           </div>
 
           {/* Technical Scope Badges */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs">
             <div>
               <div className="font-bold text-white uppercase tracking-wider text-[11px] mb-2.5">
                 Hardware Node
@@ -72,18 +72,23 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTop }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#738077]">
-          <div>
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs text-[#738077]">
+          <div className="text-center sm:text-left">
             AIoT Air Quality Monitoring Network • Academic & Engineering Project Documentation
           </div>
 
           <button
             onClick={onScrollTop}
-            className="inline-flex items-center gap-1.5 text-[#9DAAA0] hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#9DAAA0] hover:text-white transition-colors cursor-pointer"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
+        </div>
+
+        {/* Responsive Signature Line */}
+        <div className="mt-6 pt-5 border-t border-[#2A3830]/60 text-center text-xs text-[#9DAAA0]">
+          Built with ❤️ by Dhruv
         </div>
 
 

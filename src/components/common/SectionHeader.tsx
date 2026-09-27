@@ -26,24 +26,24 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   };
 
   return (
-    <div className={`mb-10 md:mb-14 ${align === 'center' ? 'text-center mx-auto max-w-3xl' : 'max-w-3xl'}`}>
-      <div className={`flex items-center gap-2 mb-3 ${align === 'center' ? 'justify-center' : ''}`}>
+    <div className={`mb-8 sm:mb-10 md:mb-14 w-full min-w-0 ${align === 'center' ? 'text-center mx-auto max-w-3xl' : 'max-w-3xl'}`}>
+      <div className={`flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2.5 sm:mb-3 ${align === 'center' ? 'justify-center' : ''}`}>
         <span className="font-mono text-xs font-bold text-[#738077] tracking-wider">
           {number}
         </span>
         <span className="text-[#D8D2C6]">—</span>
         <span
-          className={`text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${badgeClasses[badgeColor]}`}
+          className={`text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${badgeClasses[badgeColor]}`}
         >
           {badge}
         </span>
       </div>
 
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#19221C] tracking-tight leading-[1.15]">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#19221C] tracking-tight leading-[1.18] sm:leading-[1.15]">
         {title}
       </h2>
 
-      <p className="text-sm sm:text-base text-[#48544D] mt-3 leading-relaxed">
+      <p className="text-xs sm:text-sm md:text-base text-[#48544D] mt-2 sm:mt-3 leading-relaxed">
         {description}
       </p>
     </div>

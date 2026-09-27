@@ -15,7 +15,7 @@ export const HardwareContext: React.FC = () => {
   };
 
   return (
-    <section id="section-overview" className="py-16 md:py-20 border-t border-[#E6E1D8]">
+    <section id="section-overview" className="py-12 sm:py-16 md:py-20 border-t border-[#E6E1D8] w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           number="02"
@@ -26,13 +26,13 @@ export const HardwareContext: React.FC = () => {
         />
 
         {/* Boundary Card */}
-        <div className="mb-10 bg-[#EBF1ED] border border-[#D6E3DB] rounded-2xl p-6 md:p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div className="mb-8 sm:mb-10 bg-[#EBF1ED] border border-[#D6E3DB] rounded-2xl p-4 sm:p-6 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-center">
             <div>
               <span className="text-[11px] font-semibold uppercase tracking-wider text-[#2F4D3E] bg-white px-2.5 py-0.5 rounded-full border border-[#D6E3DB]">
                 Hardware Boundary
               </span>
-              <h3 className="text-lg font-bold text-[#19221C] mt-2">
+              <h3 className="text-base sm:text-lg font-bold text-[#19221C] mt-2">
                 Edge Ingestion Scope
               </h3>
               <p className="text-xs sm:text-sm text-[#48544D] mt-1 leading-relaxed">
@@ -44,7 +44,7 @@ export const HardwareContext: React.FC = () => {
               <span className="text-[11px] font-semibold uppercase tracking-wider text-[#366B6B] bg-white px-2.5 py-0.5 rounded-full border border-[#C8DFDF]">
                 Analytics Boundary
               </span>
-              <h3 className="text-lg font-bold text-[#19221C] mt-2">
+              <h3 className="text-base sm:text-lg font-bold text-[#19221C] mt-2">
                 Post-Collection ML Workflow
               </h3>
               <p className="text-xs sm:text-sm text-[#48544D] mt-1 leading-relaxed">
@@ -55,11 +55,11 @@ export const HardwareContext: React.FC = () => {
         </div>
 
         {/* Hardware Components Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
           {hardwareComponents.map((comp) => (
             <div
               key={comp.name}
-              className="bg-white p-5 rounded-xl border border-[#E6E1D8] shadow-[0_2px_8px_rgba(30,40,35,0.02)] flex flex-col justify-between"
+              className="bg-white p-4 sm:p-5 rounded-xl border border-[#E6E1D8] shadow-[0_2px_8px_rgba(30,40,35,0.02)] flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -75,7 +75,7 @@ export const HardwareContext: React.FC = () => {
                 <p className="text-xs text-[#738077] mt-2 leading-relaxed">{comp.specs}</p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-[#F0ECE3] text-[11px] text-[#48544D] font-mono">
+              <div className="mt-4 pt-3 border-t border-[#F0ECE3] text-[10px] sm:text-[11px] text-[#48544D] font-mono break-all sm:break-normal">
                 {comp.connection}
               </div>
             </div>

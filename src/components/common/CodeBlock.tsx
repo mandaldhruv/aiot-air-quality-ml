@@ -79,12 +79,12 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   };
 
   return (
-    <div className="rounded-xl overflow-hidden bg-[#151C17] border border-[#27352B] shadow-md my-3 font-mono text-xs">
+    <div className="w-full min-w-0 max-w-full rounded-xl overflow-hidden bg-[#151C17] border border-[#27352B] shadow-md my-3 font-mono text-xs">
       {/* Code Header */}
-      <div className="bg-[#1C2620] px-4 py-2.5 flex items-center justify-between border-b border-[#27352B]">
-        <div className="flex items-center gap-2 text-[#9DAAA0]">
-          <Terminal className="w-3.5 h-3.5 text-[#5F7F6C]" />
-          <span className="font-sans text-[11px] font-semibold text-[#D8D2C6]">
+      <div className="bg-[#1C2620] px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between border-b border-[#27352B] gap-2">
+        <div className="flex items-center gap-2 text-[#9DAAA0] min-w-0">
+          <Terminal className="w-3.5 h-3.5 text-[#5F7F6C] shrink-0" />
+          <span className="font-sans text-[11px] font-semibold text-[#D8D2C6] truncate">
             {title || `${language.toUpperCase()} Script`}
           </span>
         </div>
@@ -92,7 +92,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
         <button
           type="button"
           onClick={handleCopy}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-sans font-medium text-[#D8D2C6] bg-[#26352C] hover:bg-[#32453A] rounded transition-colors"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-sans font-medium text-[#D8D2C6] bg-[#26352C] hover:bg-[#32453A] rounded transition-colors shrink-0"
           title="Copy code to clipboard"
         >
           {copied ? (
@@ -110,7 +110,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
       </div>
 
       {/* Code Content */}
-      <div className="p-4 overflow-x-auto text-[#E7EFEA] leading-relaxed select-text">
+      <div className="p-3 sm:p-4 overflow-x-auto max-w-full text-[#E7EFEA] leading-relaxed select-text">
         <table className="w-full border-collapse">
           <tbody>
             {lines.map((line, idx) => (

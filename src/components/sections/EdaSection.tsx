@@ -10,10 +10,10 @@ interface EdaSectionProps {
 
 export const EdaSection: React.FC<EdaSectionProps> = ({ onViewCode }) => {
   return (
-    <section id="section-eda" className="py-16 md:py-20 border-t border-[#E6E1D8]">
+    <section id="section-eda" className="py-12 sm:py-16 md:py-20 border-t border-[#E6E1D8] w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          number="05"
+          number="06"
           badge="Exploratory Data Analysis"
           title="Historical AQI Dynamics & Patterns"
           description="Before training our machine learning model, we analyze multi-day variations, diurnal 24-hour cycles, and categorical pollution frequency across 1,967 logged intervals. Each visualization is backed by the actual Colab notebook outputs."
@@ -21,19 +21,19 @@ export const EdaSection: React.FC<EdaSectionProps> = ({ onViewCode }) => {
         />
 
         {/* Graph 01: Average AQI per Day (Large full-width) */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <DailyAqiChart onViewCode={onViewCode} />
         </div>
 
         {/* Graphs 02 & 03: Two-Column Analytical Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Graph 02: Average AQI by Hour */}
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full min-w-0">
             <HourlyAqiChart onViewCode={onViewCode} />
           </div>
 
           {/* Graph 03: Pollution Level Distribution */}
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full min-w-0">
             <PollutionChart onViewCode={onViewCode} />
           </div>
         </div>
