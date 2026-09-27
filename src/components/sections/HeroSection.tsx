@@ -162,7 +162,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 AQI Forecast
               </h3>
               <p className="text-xs text-[#48544D] leading-relaxed">
-                Predicts next 24-hour diurnal profile for 2026-09-01 using synthesized feature vectors based on diurnal weather baselines.
+                Predicts next 24-hour diurnal profile for 28-09-2026 using synthesized feature vectors based on diurnal weather baselines.
               </p>
               <div className="mt-4 pt-3 border-t border-[#F0ECE3] text-[11px] font-semibold text-[#7E22CE] flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5" />

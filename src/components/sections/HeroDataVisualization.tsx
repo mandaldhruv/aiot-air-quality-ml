@@ -128,7 +128,7 @@ export const HeroDataVisualization: React.FC<HeroDataVisualizationProps> = ({
           <span>Next 24 Hours</span>
         </div>
         <div className="text-[10px] font-mono text-[#5F7F6C]">
-          Target: {forecastMeta.forecastDate}
+          TARGET: {forecastMeta.forecastDate}
         </div>
       </div>
 

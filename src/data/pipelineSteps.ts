@@ -60,7 +60,7 @@ export const pipelineSteps: PipelineStep[] = [
     number: '07',
     title: '24-Hour Next-Day Forecast',
     shortDesc: 'Synthesizing feature frame for next calendar day to produce hourly forecast curve.',
-    details: 'For the next calendar date (2026-09-01), hourly rows (00:00 to 23:00) are generated using typical diurnal weather averages (Temperature and humidity) to forecast the 24-hour AQI progression.',
+    details: 'For the next calendar date (28-09-2026), hourly rows (00:00 to 23:00) are generated using typical diurnal weather averages (Temperature and humidity) to forecast the 24-hour AQI progression.',
     iconName: 'TrendingUp',
     techDetail: 'next_day = last_date + pd.Timedelta(days=1) • model.predict',
   },

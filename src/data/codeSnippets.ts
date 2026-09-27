@@ -268,7 +268,7 @@ future_df = pd.DataFrame(future_rows)
 future_df['predicted_AQI'] = model.predict(future_df[features])
 future_df.head()`,
     keyOutputs: [
-      'Target forecast date: 2026-09-01 (next_day)',
+      'Target forecast date: 28-09-2026 (next_day)',
       '24 synthetic hourly vectors populated with mean diurnal Temperature and humidity',
       'Hourly AQI predictions inferred through trained Random Forest',
     ],
@@ -290,7 +290,7 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()`,
     keyOutputs: [
-      'Title: Predicted AQI for Next 24 Hours (2026-09-01)',
+      'Title: Predicted AQI for Next 24 Hours (28-09-2026)',
       'Hourly trajectory plotted from 00:00 to 23:00',
     ],
   },

@@ -37,7 +37,7 @@ export const insightsData: InsightItem[] = [
   {
     id: 'ins-04',
     category: 'Forecast Progression',
-    title: 'Predicted Late-Day Accumulation on 2026-09-01',
+    title: 'Predicted Late-Day Accumulation on 28-09-2026',
     observation:
       'The Random Forest model forecasts low-to-moderate AQI through the morning (trough of 75.4 at 08:00) before predicting an upward trend that peaks at 174.1 at 20:00.',
     dataEvidence:

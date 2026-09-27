@@ -126,7 +126,7 @@ The analysis pipeline produces four primary analytical figures generated through
   - 🔴 **Severe (AQI 201+):** **53 intervals (2.7%)**
 
 ### 4. Predicted AQI for Next 24 Hours (`predicted_aqi_next_24h.png`)
-- **Target Forecast Horizon:** Single-day 24-hour predictive trajectory for **September 1, 2026**.
+- **Target Forecast Horizon:** Single-day 24-hour predictive trajectory for **September 28, 2026 (28-09-2026)**.
 - **Model Output:** Tracks expected diurnal fluctuation from **84.8 AQI at 00:00**, dipping to **75.4 AQI at 08:00**, and rising to an evening peak of **174.1 AQI at 20:00**.
 
 ---

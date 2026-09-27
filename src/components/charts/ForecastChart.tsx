@@ -36,8 +36,8 @@ export const ForecastChart: React.FC<ForecastChartProps> = ({ onViewCode }) => {
               <Sparkles className="w-3 h-3 text-[#7E22CE]" />
               ML Model Output • 24-Hour Horizon
             </span>
-            <span className="text-[11px] font-medium text-[#738077]">
-              Target Date: {forecastMeta.forecastDate} ({forecastMeta.dayOfWeek})
+            <span className="text-[11px] font-mono font-medium text-[#738077]">
+              TARGET: {forecastMeta.forecastDate}
             </span>
           </div>
           <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#19221C] tracking-tight">
@@ -93,7 +93,7 @@ export const ForecastChart: React.FC<ForecastChartProps> = ({ onViewCode }) => {
               />
             </div>
             <p className="text-xs text-[#738077] italic text-center">
-              Target date: 2026-09-01. Purple line chart with circle markers plotted across 24 hourly steps.
+              TARGET: 28-09-2026. Purple line chart with circle markers plotted across 24 hourly steps.
             </p>
           </div>
         ) : (

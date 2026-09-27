@@ -28,9 +28,9 @@ export const forecastData: ForecastPoint[] = [
 ];
 
 export const forecastMeta = {
-  forecastDate: '2026-09-01',
-  dayOfWeek: 'Tuesday',
-  priorDayLastTimestamp: '2026-08-31 23:00',
+  forecastDate: '28-09-2026',
+  dayOfWeek: 'Monday',
+  priorDayLastTimestamp: '27-09-2026 23:00',
   minPredictedAqi: 75.4,
   minHour: '08:00',
   maxPredictedAqi: 174.1,

@@ -15,7 +15,7 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ onViewCode }) 
           number="09"
           badge="Inference & Culmination"
           title="24-Hour Predictive AQI Horizon"
-          description="The culmination of our machine learning pipeline. Using the fitted 200-tree Random Forest Regressor and synthesized diurnal environmental conditions, we forecast the complete 24-hour AQI profile for the upcoming day (2026-09-01)."
+          description="The culmination of our machine learning pipeline. Using the fitted 200-tree Random Forest Regressor and synthesized diurnal environmental conditions, we forecast the complete 24-hour AQI profile for the upcoming day (28-09-2026)."
           badgeColor="purple"
         />
 
@@ -33,7 +33,7 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ onViewCode }) 
           </div>
 
           <h3 className="text-lg sm:text-xl font-bold text-[#19221C] mb-2">
-            How Next-Day Features Are Generated for 2026-09-01
+            How Next-Day Features Are Generated for 28-09-2026
           </h3>
 
           <p className="text-xs sm:text-sm text-[#48544D] leading-relaxed mb-6">
@@ -47,7 +47,7 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ onViewCode }) 
                 1. Calendar Projections
               </div>
               <p className="text-xs text-[#738077] leading-relaxed">
-                Determines <code className="font-mono text-[#2F4D3E]">next_day = last_date + 1 day</code> (2026-09-01), computing its day of week (<code className="font-mono">1</code> for Tuesday) and month number (<code className="font-mono">9</code> for September).
+                Determines <code className="font-mono text-[#2F4D3E]">next_day = last_date + 1 day</code> (28-09-2026), computing its day of week (<code className="font-mono">0</code> for Monday) and month number (<code className="font-mono">9</code> for September).
               </p>
             </div>
 
