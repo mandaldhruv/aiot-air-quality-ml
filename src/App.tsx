@@ -57,11 +57,11 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#FAF8F5] text-[#19221C] flex flex-col font-sans selection:bg-[#D7E3DC] selection:text-[#182B21]">
-      {/* Sticky Editorial Header */}
+      {/* Fixed Editorial Header */}
       <Navbar onNavigate={scrollToSection} />
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full max-w-full min-w-0">
+      <main className="flex-1 w-full max-w-full min-w-0 pt-16">
         {/* 01: Hero Section */}
         <HeroSection
           onExploreClick={() => scrollToSection('section-pipeline')}

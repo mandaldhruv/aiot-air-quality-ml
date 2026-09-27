@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-200 ${
         isScrolled
           ? 'bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E6E1D8] shadow-[0_2px_12px_rgba(25,34,28,0.04)]'
           : 'bg-[#FAF8F5] border-b border-[#EFEBE4]'
@@ -283,7 +283,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       {/* Mobile & Tablet Drawer (< 1024px) */}
       {mobileMenuOpen && (
         <div
-          className="lg:hidden border-b border-[#E6E1D8] bg-[#FAF8F5]/98 backdrop-blur-md px-4 pt-3 pb-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200"
+          className="lg:hidden border-b border-[#E6E1D8] bg-[#FAF8F5]/98 backdrop-blur-md px-4 pt-3 pb-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200 max-h-[calc(100vh-4rem)] overflow-y-auto"
           role="dialog"
           aria-label="Mobile Navigation"
         >
