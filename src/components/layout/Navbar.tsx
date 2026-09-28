@@ -28,13 +28,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
   const navLinks: NavItem[] = [
     { label: 'Overview', id: 'section-overview', number: '01' },
-    { label: 'Pipeline', id: 'section-pipeline', number: '02' },
-    { label: 'Features', id: 'section-features', number: '03' },
-    { label: 'EDA & Analysis', id: 'section-eda', number: '04' },
-    { label: 'ML Model', id: 'section-model', number: '05' },
-    { label: '24h Forecast', id: 'section-forecast', number: '06' },
-    { label: 'Code Workspace', id: 'section-code', number: '07' },
-    { label: 'Insights', id: 'section-insights', number: '08' },
+    { label: 'Live AQI', id: 'section-live', number: '02' },
+    { label: 'Pipeline', id: 'section-pipeline', number: '03' },
+    { label: 'Features', id: 'section-features', number: '04' },
+    { label: 'EDA & Analysis', id: 'section-eda', number: '05' },
+    { label: 'ML Model', id: 'section-model', number: '06' },
+    { label: '24h Forecast', id: 'section-forecast', number: '07' },
+    { label: 'Code Workspace', id: 'section-code', number: '08' },
+    { label: 'Insights', id: 'section-insights', number: '09' },
   ];
 
   // Helper mapping: map internal sub-sections to their primary nav link
@@ -65,6 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       const sections = [
         'section-overview',
         'section-physical',
+        'section-live',
         'section-pipeline',
         'section-features',
         'section-eda',

@@ -4,6 +4,7 @@ import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/sections/HeroSection';
 import { HardwareContext } from './components/sections/HardwareContext';
 import { PhysicalSystemSection } from './components/sections/PhysicalSystemSection';
+import { LiveAirQualitySection } from './components/sections/LiveAirQualitySection';
 import { PipelineSection } from './components/sections/PipelineSection';
 import { FeaturesSection } from './components/sections/FeaturesSection';
 import { EdaSection } from './components/sections/EdaSection';
@@ -74,7 +75,10 @@ export const App: React.FC = () => {
         {/* 03: The Physical System (Real Hardware Prototype Showcase) */}
         <PhysicalSystemSection onExplorePipeline={() => scrollToSection('section-pipeline')} />
 
-        {/* 04: ML Data Pipeline */}
+        {/* 04: Live Air Quality (Real-Time Telemetry & Degree-6 Polynomial Inference) */}
+        <LiveAirQualitySection />
+
+        {/* 05: ML Data Pipeline */}
         <PipelineSection onViewCodeSection={handleViewCode} />
 
         {/* 04: Dataset & Feature Matrix */}
